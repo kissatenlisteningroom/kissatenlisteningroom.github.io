@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Kissaten — Make yourself at home</title>
+  <link rel="stylesheet" href="assets/hardware.css">
+  <link rel="stylesheet" href="install.css?v=20261103-beginner">
+</head>
+<body>
+  <div class="preview" id="availability" role="status">The Kissaten download isn’t live yet. You can explore the setup guide.</div>
+  <main class="installation">
+    <aside class="room" aria-label="Kissaten listening room">
+      <img class="room-photo" src="assets/listening-room.jpg" alt="Kissaten’s warmly lit listening room after dark, with curved record shelves, walnut speakers, a bar and an empty leather chair." width="941" height="1672" fetchpriority="high">
+      <div class="room-copy"><h2>Make yourself<br>at home.</h2><p>Settle in with the music you love. Follow a new sound. Stay a little longer.</p></div>
+    </aside>
+    <section class="guide" id="guide">
+      <header class="guide-header">
+        <a class="signature" href="#welcome" aria-label="Kissaten — return to the beginning"><img src="assets/signature-mask.png" alt="Kissaten"></a>
+        <button id="help" class="quiet" aria-expanded="false" aria-controls="help-panel">Need a hand? <span aria-hidden="true">↗</span></button>
+      </header>
+      <nav class="journey" aria-label="Installation stages"><ol id="stages"></ol></nav>
+      <div id="content" class="content"></div><noscript>This interactive guide needs JavaScript. You can also use the <a href="https://faq.altstore.io/altstore-classic/how-to-install-altstore-macos">official AltStore Mac instructions</a> or <a href="https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows">Windows instructions</a>.</noscript>
+      <section id="help-panel" class="help-panel" hidden aria-labelledby="help-title"><div class="help-heading"><h2 id="help-title">A little help</h2><button id="close-help" class="quiet" aria-label="Close help">Close</button></div><p id="help-copy"></p><a id="help-link" target="_blank" rel="noopener noreferrer">Open the official guide ↗</a><button id="copy-help" class="quiet">Copy a short help message</button><p id="message" role="status" aria-live="polite"></p><p class="small">Your place stays here. Keep passwords, verification codes and recordings out of support messages.</p></section>
+      <footer class="guide-footer"><button id="back" class="quiet">← Back</button><span id="position"></span><button id="restart" class="quiet">Start again</button></footer><div class="guide-utilities"><button id="refresh-guide" class="quiet">Updates &amp; refresh</button><span id="release-note"></span></div>
+    </section>
+  </main>
+  <script src="assets/hardware.js"></script>
+  <script src="install-config.js"></script><script src="install.js?v=20261103-beginner"></script>
+</body>
+</html>
