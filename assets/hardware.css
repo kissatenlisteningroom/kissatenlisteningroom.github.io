@@ -1,0 +1,32 @@
+/* Kissaten hardware v1 — approved 29 October 2026. Material authority stays in
+   brass-hardware.css / approved-materials.css; never animate the fixed furniture. */
+:root,:host{--hardware-travel:1px;--hardware-press:75ms;--hardware-release:150ms;--hardware-focus:#f1d59b}
+.hardware-control{transition:box-shadow var(--hardware-release) ease-out,background-color var(--hardware-release) ease-out;-webkit-tap-highlight-color:transparent}
+.hardware-control:focus-visible{outline:2px solid var(--hardware-focus);outline-offset:3px}
+.hardware-control.hardware-brass{isolation:isolate}
+.hardware-control.hardware-brass.hardware-down:active{transform:none!important;filter:none}
+.hardware-control>.hardware-surface{position:absolute!important;inset:0;z-index:-1;pointer-events:none;border:inherit;border-radius:inherit;background:inherit;box-shadow:inset 0 1px 1px #ffe2a142,inset 0 -1px 2px #46270d66;transition:transform var(--hardware-release) ease-out,box-shadow var(--hardware-release) ease-out,filter var(--hardware-release) ease-out}
+.hardware-control.hardware-brass:before,.hardware-control.hardware-brass:after{z-index:2}
+.hardware-control>.hardware-surface{background-blend-mode:inherit}
+.hardware-control.hardware-brass.hardware-down{transform:none;box-shadow:0 1px 2px #0009,inset 0 2px 3px #271909a8}
+.hardware-control.hardware-brass.hardware-down>.hardware-surface{transform:translateY(var(--hardware-travel));filter:brightness(.88);box-shadow:inset 0 2px 3px #35210dbb,inset 0 -1px #e6c78c44;transition-duration:var(--hardware-press)}
+.hardware-control.hardware-down:not(.hardware-brass):not(.record):not(.sleeve):not(.room-choice):not(.listening-shade){box-shadow:inset 0 2px 4px #0009,inset 0 -1px #c5a36b26;background-color:#02080524;transition-duration:var(--hardware-press)}
+.hardware-control.hardware-down:is(.record,.sleeve){filter:brightness(.91)}
+.hardware-control.hardware-down.room-choice>.brass-plate{box-shadow:inset 0 2px 3px #35210dbb,inset 0 -1px #e6c78c44;filter:brightness(.88)}
+.hardware-control:is(:disabled,[aria-disabled="true"]){opacity:1!important;cursor:default;filter:saturate(.72) brightness(.78);text-shadow:0 -1px .5px #0007,0 1px #e9cd9230}
+.hardware-control.hardware-brass:is(:disabled,[aria-disabled="true"]){color:#281e10;-webkit-text-fill-color:#281e10;text-shadow:0 -.4px .3px #3d230b8c,0 .7px .3px #ffe0a58c;box-shadow:inset 0 1px 2px #24180a9c,inset 0 -1px #e6c78c38}
+.hardware-control.hardware-brass:is(:disabled,[aria-disabled="true"]):active{transform:none!important;box-shadow:inset 0 1px 2px #24180a9c,inset 0 -1px #e6c78c38}
+.hardware-control[aria-busy="true"]{cursor:progress}
+.hardware-control.hardware-brass[aria-busy="true"]{filter:brightness(.92)}
+.hardware-close.hardware-control{display:inline-grid;place-items:center;flex-shrink:0;width:44px;min-width:44px;height:44px;min-height:44px;padding:11px;border:0;background:transparent;color:#d6bb85;text-shadow:none;line-height:1;margin-right:0}
+.hardware-close-mark{display:block;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;pointer-events:none;filter:drop-shadow(0 -1px .5px #000) drop-shadow(0 1px .4px #ffe0a82b)}
+:is(.listening-sheet,.playlist-picker,.sound-drawer,.account-entry) :is(header,.picker-head)>.hardware-close{margin-left:auto;margin-right:0}
+.options-heading>.hardware-close,.drawer-head>.hardware-close{margin-left:auto}
+@media(prefers-reduced-motion:reduce){.hardware-control,.hardware-control>.hardware-surface{transition:none!important}.hardware-control.hardware-down>.hardware-surface{transform:none!important}}
+@media(prefers-contrast:more){.hardware-control:is(:disabled,[aria-disabled="true"]){filter:saturate(.7) brightness(.9)}.hardware-close{color:#f2d79e}}
+@media(forced-colors:active){.hardware-control,.hardware-control>.hardware-surface{background:ButtonFace!important;color:ButtonText!important;-webkit-text-fill-color:ButtonText!important;border-color:ButtonText!important;filter:none!important;text-shadow:none!important;box-shadow:none!important}.hardware-control:is(:disabled,[aria-disabled="true"]){color:GrayText!important;-webkit-text-fill-color:GrayText!important;border-style:dashed}.hardware-control:focus-visible{outline-color:Highlight}.hardware-close-mark{stroke:ButtonText;filter:none}}
+
+/* Header-owned dismissals use the same trailing alignment in every room. */
+.dialog-heading>.hardware-close{margin-left:auto}
+.account-sheet>.account-dismiss.hardware-close{position:absolute;top:10px;right:10px;margin:0}
+.record-options>.options-heading{display:flex;align-items:center;justify-content:space-between;min-height:44px}
