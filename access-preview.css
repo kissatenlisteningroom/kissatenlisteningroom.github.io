@@ -1,0 +1,16 @@
+.access-options{display:grid;gap:16px;margin:28px 0}.access-options button{text-align:left;width:100%;padding:18px 22px}.access-options strong,.access-options small{display:block}.access-options small{margin-top:6px;color:var(--muted);font-size:15px}.access-summary{background:#0b150f;padding:24px;margin:24px 0;color:var(--paper)}.access-summary p:last-child{margin-bottom:0}.access-note{color:var(--muted);font-size:14px}.access-list{padding-left:22px;color:var(--paper)}.access-list li{margin:12px 0}.access-preview .content{max-width:600px}
+/* Keep the original materials; make the access route comfortable on smaller screens. */
+.access-preview .choice::after{content:none}
+.access-preview .choice strong::after{content:' →';white-space:nowrap}
+.access-preview .access-options{margin:24px 0}
+.access-preview .content{margin-top:28px}
+.access-preview .guide-header{flex-wrap:wrap;gap:8px 20px}
+.access-preview .access-summary .brass{display:inline-block;text-decoration:none}
+.access-preview .phone-transfer h2{font:400 26px/1.2 var(--room)}
+.access-preview form{margin:24px 0}.access-preview label{display:block;margin-bottom:8px;color:var(--paper)}
+.access-preview input{display:block;width:100%;min-height:48px;padding:12px;background:#0b150f;color:var(--paper);border:1px solid var(--muted);font:inherit;border-radius:0;margin-bottom:10px}
+.access-preview .actions .quiet{white-space:normal}.access-preview .phone-transfer{margin-top:32px}
+@media(max-width:900px){.access-preview .installation{display:block}.access-preview .room{display:block;min-height:300px;height:300px}.access-preview .room-copy{padding:70px 28px 22px}.access-preview .room-copy h2{font-size:38px;margin:8px 0}.access-preview .room-copy p{max-width:38ch;margin:0}.access-preview .room-photo{object-position:center 46%}.access-preview .guide{min-height:calc(100svh - 32px)}.access-preview .content{max-width:600px}}
+@media(max-width:420px){.access-preview .guide{padding-left:22px;padding-right:22px}.access-preview .guide-header .signature{width:165px}.access-preview .guide-header .quiet{font-size:14px}.access-preview .access-options button{padding:18px}.access-preview .room{height:280px;min-height:280px}}
+
+@media(max-width:900px){.access-preview:not([data-access-screen="welcome"]) .room{display:none}}
