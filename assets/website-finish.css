@@ -1,0 +1,332 @@
+:root {
+  --website-paper: #eee4d4;
+  --website-paper-ink: #31271f;
+  --website-green: #172820;
+  --website-copy: #efe7d7;
+  --website-quiet: #d4c8b2;
+  --website-gold: #d9bc86;
+  --website-rule: #82725c;
+  --website-brass: #c5a875;
+  --website-brass-ink: #24180f;
+  --website-brass-finish:
+    linear-gradient(165deg, #dec695c9, #bc9c67ad 65%, #cfb583bf),
+    url("brass-patina.webp");
+}
+
+.invitation,
+.walkthrough,
+.beta,
+.installation .guide {
+  color: var(--website-copy);
+  -webkit-text-fill-color: currentColor;
+}
+
+.hero-copy {
+  background: var(--website-paper);
+  color: var(--website-paper-ink);
+  -webkit-text-fill-color: currentColor;
+}
+
+.hero-copy h1,
+.hero-copy > p:first-of-type { color: var(--website-paper-ink); }
+.hero-copy .note { color: #584737; }
+.hero-copy > * { animation: none; }
+
+.enter,
+.primary {
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--website-brass-ink);
+  -webkit-text-fill-color: currentColor;
+}
+
+.enter > span,
+.primary .primary-face,
+.installation .guide .brass {
+  min-height: 48px;
+  padding: 10px 18px;
+  border: 1px solid #8e7048;
+  border-top-color: #ead3a5;
+  border-radius: 4px;
+  background-color: var(--website-brass);
+  background-image: var(--website-brass-finish);
+  background-position: center;
+  background-size: auto, 96px 76px;
+  background-blend-mode: normal;
+  color: var(--website-brass-ink);
+  -webkit-text-fill-color: currentColor;
+  font: 400 1rem/1.3 Georgia, "Times New Roman", serif;
+  text-shadow: none;
+  box-shadow: inset 0 1px #f6dfac70, inset 0 -1px #71563185;
+}
+
+.enter > span,
+.primary .primary-face { align-items: center; justify-content: space-between; }
+.enter { min-width: 9rem; }
+.hero-copy .primary { margin-top: 1.25rem; }
+.walkthrough { background: #27221e; padding-block: clamp(2.5rem, 6vw, 5rem); }
+.walkthrough .chapter-heading { gap: 1.25rem; }
+.walkthrough-setup a,
+.setup { color: var(--website-gold); }
+.walkthrough-setup p,
+.beta-invitation .note,
+.invitation .status { color: var(--website-quiet); }
+
+.walkthrough .walk-controls {
+  width: 100%;
+  max-width: 24rem;
+  gap: 4px;
+  margin-block: 24px 28px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--website-rule);
+  border-radius: 0;
+  background: none;
+}
+
+.walkthrough .walk-controls button {
+  flex: 1 1 0;
+  min-height: 48px;
+  padding: 4px 8px;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--website-quiet);
+  font: 400 1.0625rem Georgia, "Times New Roman", serif;
+  -webkit-text-fill-color: currentColor;
+}
+
+.walkthrough .walk-controls button[aria-pressed="true"] {
+  border-bottom-color: var(--website-gold);
+  color: var(--website-gold);
+}
+
+.walkthrough .walk-controls .view-selected {
+  width: .85em;
+  height: .85em;
+}
+
+.walkthrough .walk-controls button:active {
+  background: #3c3329;
+  transform: none;
+}
+
+.app-view { align-items: center; animation: none; }
+.view-copy,
+.view-copy p { color: var(--website-copy); }
+.view-copy p.quiet-copy { color: var(--website-quiet); }
+.beta { background: var(--website-green); padding-block: clamp(2.5rem, 6vw, 5rem); }
+.beta .record-plaque { padding: 0; margin: 24px 0 0; background: none; }
+.beta .record-plaque img { width: min(12rem, 55%); margin: 0; }
+
+.installation .guide {
+  background: linear-gradient(#172820e8, #172820e8), url("upholstery.webp") center / 360px #172820;
+  isolation: isolate;
+}
+
+.guide .signature { width: clamp(8.75rem, 18vw, 11.25rem); background: transparent; }
+.guide .signature::before { display: none; }
+.guide .signature img {
+  opacity: 1;
+  filter: brightness(1.04) sepia(.3);
+  mix-blend-mode: normal;
+}
+
+.guide .content :is(p, li, small, figcaption),
+.guide .content :is(.instructions strong, .confirmation),
+.guide .setup-notes p {
+  color: var(--website-copy);
+  -webkit-text-fill-color: currentColor;
+}
+
+.guide .content :is(.step-context, small, figcaption),
+.guide .content .confirmation,
+.guide .setup-notes p { color: var(--website-quiet); }
+.guide .content :is(.illustration p, .choice strong) {
+  background: none;
+  color: var(--website-gold);
+  -webkit-text-fill-color: currentColor;
+  filter: none;
+}
+
+/* Computer choices need their own readable face before hover. */
+.guide .choice {
+  background: #1e2d24;
+  border-color: #71664e;
+}
+.guide .choice:hover { background: #26372c; }
+.guide .choice small { color: var(--website-copy); }
+
+.guide .content .step-context { color: var(--website-quiet); }
+.guide .secondary,
+.guide .quiet,
+.guide #help-copy p { color: var(--website-copy); -webkit-text-fill-color: currentColor; }
+.guide .journey li { color: var(--website-quiet); }
+.guide .journey li[aria-current="step"] { color: var(--website-copy); }
+
+.installation .guide .brass > .hardware-surface { background: inherit; }
+.installation .guide .brass:is(:disabled,[aria-disabled="true"]) {
+  background: transparent;
+  border-color: var(--website-rule);
+  color: var(--website-quiet);
+  -webkit-text-fill-color: currentColor;
+  filter: none;
+  box-shadow: none;
+}
+.installation .guide .brass:disabled > .hardware-surface { display: none; }
+.guide[data-screen="welcome"] .content { margin-block: auto; }
+.guide[data-screen="welcome"] .actions { gap: 8px 20px; }
+.guide[data-screen="welcome"] .confirmation { margin: 12px 0 18px; }
+
+.walkthrough:focus { outline: none; }
+.walkthrough:target { scroll-margin-top: 16px; }
+
+@media (max-width: 700px) {
+  .hero .hero-room { min-height: clamp(13rem, 57vw, 19rem); }
+  .hero-copy { padding-block: 24px 28px; }
+  .walkthrough .chapter-heading { display: grid; gap: 4px; }
+  .walkthrough .walkthrough-setup { margin: 0; }
+  .walkthrough .walk-controls { margin-top: 16px; }
+  .walkthrough .app-view { align-items: stretch; gap: 20px; }
+  .walkthrough .app-view figure { width: 100%; }
+  .guide[data-screen="welcome"] .content { margin-block: 20px; }
+  .guide .guide-header { min-height: 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter > span,
+  .primary .primary-face { transition: none; }
+  .enter:active > span,
+  .primary:active .primary-face { transform: none; }
+}
+
+@media (forced-colors: active) {
+  .invitation, .hero-copy, .walkthrough, .beta, .installation .guide {
+    background: Canvas;
+    color: CanvasText;
+  }
+  .hero-copy h1, .hero-copy > p:first-of-type, .hero-copy .note,
+  .walkthrough-setup p, .beta-invitation .note, .invitation .status,
+  .view-copy, .view-copy p, .view-copy p.quiet-copy,
+  .guide .content :is(p, li, small, figcaption, .step-context, .illustration p, .choice strong),
+  .guide .setup-notes p, .guide .journey li, .guide .journey li[aria-current="step"] {
+    color: CanvasText;
+  }
+  .setup, .walkthrough-setup a, .guide .secondary, .guide .quiet { color: LinkText; }
+  .enter > span, .primary .primary-face, .installation .guide .brass {
+    background: ButtonFace;
+    color: ButtonText;
+    border-color: ButtonText;
+    box-shadow: none;
+  }
+  .guide .choice, .guide .choice:hover { background: Canvas; color: CanvasText; border-color: ButtonText; }
+  .walkthrough .walk-controls,
+  .walkthrough .walk-controls button { color: CanvasText; border-color: CanvasText; }
+  .walkthrough .walk-controls button[aria-pressed="true"] {
+    background: Highlight;
+    color: HighlightText;
+    border-color: HighlightText;
+  }
+}
+
+/* Welcome and computer choice share a quiet leather field from the app. */
+.installation .guide:is([data-step="0"], [data-step="1"]) {
+  --setup-surface: #18251d;
+  background: linear-gradient(145deg, #19261ec4, #101911de),
+    url("upholstery.webp") center / 220px var(--setup-surface);
+}
+
+.guide:is([data-step="0"], [data-step="1"]) .content {
+  max-width: 32rem;
+  padding-block: clamp(1.5rem, 4vh, 3rem);
+}
+
+.guide:is([data-step="0"], [data-step="1"]) h1:focus { outline: none; }
+
+.guide:is([data-step="0"], [data-step="1"]) h1 .impressed-ink {
+  color: #d6bb85;
+  -webkit-text-fill-color: currentColor;
+  text-shadow: 0 -.75px .4px #020603, 0 .8px .35px #f3dcaa50;
+}
+
+/* The opaque part of the fill stays readable if the browser drops the grain. */
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .guide:is([data-step="0"], [data-step="1"]) h1 .impressed-ink {
+    background-image: url("lettering-grain.svg"),
+      linear-gradient(166deg, #d8c08d, #c3a874 37%, #e3cd98 53%, #c3a874 69%, #b69d70);
+    background-size: 100px 100px, 100% 100%;
+    background-blend-mode: soft-light, normal;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #d6bb85ce;
+  }
+}
+
+.guide[data-step="0"] .intro { margin-bottom: 1.25rem; }
+.guide[data-step="0"] .confirmation { margin: 1rem 0 0; }
+
+.installation .guide[data-step="0"] .brass {
+  border: 1px solid #8e7048;
+  border-top-color: #d9ba80;
+  text-shadow: 0 -.45px .35px #39241385, 0 .65px .35px #f5d89b9c;
+  box-shadow: 0 2px 3px #0007, inset 0 1px #f9e4b666, inset 0 -1px #6447209c;
+}
+
+.guide[data-step="1"] .choices {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin-block: 1.25rem .35rem;
+  border-block: 1px solid #82725c;
+}
+
+.guide[data-step="1"] .choice {
+  min-height: 54px;
+  padding: .65rem 2.5rem .65rem .75rem;
+  border: 0;
+  border-radius: 0;
+  background: #17241c;
+  box-shadow: none;
+}
+
+.guide[data-step="1"] .choice + .choice { border-top: 1px solid #544d3c; }
+.guide[data-step="1"] .choice strong { margin: 0; color: var(--website-copy); }
+.guide[data-step="1"] .step-context, .guide[data-step="1"] .choice::after { display: none; }
+.guide[data-step="1"] .choice-arrow { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); color: var(--website-gold); }
+.guide[data-step="1"] .choice:hover { background: #243529; }
+
+@media (max-width: 600px) {
+  .installation .guide[data-step="0"] { min-height: 100svh; }
+  .guide:is([data-step="0"], [data-step="1"]) .content { padding-block: .5rem 1.25rem; }
+}
+
+@media (prefers-contrast: more) {
+  .guide:is([data-step="0"], [data-step="1"]) h1 .impressed-ink {
+    background: none;
+    color: #f4dfb1;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+@media (forced-colors: active) {
+  .installation .guide:is([data-step="0"], [data-step="1"]) { background: Canvas; }
+  .guide:is([data-step="0"], [data-step="1"]) h1 .impressed-ink {
+    background: none;
+    color: CanvasText;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: none;
+  }
+  .installation .guide[data-step="0"] .brass { border-color: ButtonText; box-shadow: none; text-shadow: none; }
+  .guide[data-step="1"] .choices, .guide[data-step="1"] .choice + .choice { border-color: ButtonText; }
+  .guide[data-step="1"] .choice, .guide[data-step="1"] .choice:hover { background: ButtonFace; }
+  .guide[data-step="1"] .choice strong, .guide[data-step="1"] .choice-arrow { color: ButtonText; }
+}
+
+@media (min-width: 601px) {
+  .walkthrough .app-view .view-copy { grid-column: 2; grid-row: 1; }
+  .walkthrough .app-view figure { grid-column: 1; grid-row: 1; }
+}

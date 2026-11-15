@@ -1,0 +1,81 @@
+* { box-sizing: border-box; }
+body { margin: 0; color: #f0e5cf; background: #121a13; font: 1rem/1.55 system-ui,sans-serif; }
+.threshold { min-height: 100svh; display: grid; grid-template-columns: 1fr 1.05fr; }
+.exterior-frame { display: contents; }
+.exterior { width: 100%; height: 100%; max-height: max(100svh,700px); object-fit: cover; object-position: 52% 27%; }
+.invitation {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: clamp(32px,8vw,126px);
+  background: linear-gradient(141deg,#0e2016b8,#0a160fdd),url("assets/upholstery.webp") center / 370px #16231a;
+}
+.signature { width: min(17rem,100%); height: auto; filter: brightness(.83) sepia(.75) saturate(1.45) drop-shadow(0 -1px #080d08) drop-shadow(0 1px #e3c48a55); }
+h1 { margin: 1.2rem 0 0; max-width: 16ch; font: clamp(2rem,4.4vw,4rem)/1.05 Georgia,serif; color: #cbb07d; text-shadow: 0 -1px #0a0d08, 0 1px #ebca8c60; }
+p { max-width: 36ch; margin: .85rem 0 0; }
+.enter {
+  display: inline-grid;
+  min-width: 10rem;
+  min-height: 50px;
+  margin-top: 1.5rem;
+  padding: 3px;
+  color: #291c0e;
+  background: #362719;
+  border: 1px solid #8f754a;
+  border-radius: 7px;
+  text-decoration: none;
+}
+.enter > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .45em .9em;
+  border: 1px solid #a18453;
+  border-top-color: #e8ca91;
+  border-radius: 4px;
+  background: linear-gradient(157deg,#d2b580,#b49762 60%,#c7ab75);
+  box-shadow: inset 0 1px #f6d99b55, inset 0 -1px #725127a6;
+  text-shadow: 0 1px #efcf93a3;
+  font: 1.2rem/1.2 Georgia,serif;
+  transition: transform 150ms ease-out, filter 150ms ease-out, box-shadow 150ms ease-out;
+}
+.enter:hover > span { filter: brightness(1.07); }
+.enter:active > span {
+  transform: translateY(1px);
+  filter: brightness(.92);
+  box-shadow: inset 0 2px 3px #38240c91;
+}
+.setup { display: inline-flex; min-height: 44px; align-items: center; margin-top: .45rem; color: #e6c890; text-underline-offset: .22em; }
+.status { margin-top: 0; font-size: .875rem; color: #e1d1b0; }
+a:focus-visible { outline: 2px solid #f5dba4; outline-offset: 4px; }
+@media (max-width: 700px) {
+  .threshold { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(clamp(220px,64vw,370px),1fr) auto; }
+  .exterior-frame { display: block; position: relative; overflow: hidden; }
+  .exterior { position: absolute; inset: 0; max-height: none; object-position: 50% 15%; }
+  .invitation { padding: 24px 24px 36px; }
+  .signature { width: min(10rem,100%); }
+  h1 { margin-top: .75rem; max-width: 22ch; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .enter > span { transition: none; }
+  .enter:active > span { transform: none; }
+}
+@media (forced-colors: active) {
+  .invitation { background: Canvas; color: CanvasText; }
+  .signature { display: none; }
+  h1, .status, .setup { color: CanvasText; text-shadow: none; }
+  .enter, .enter > span { background: ButtonFace; color: ButtonText; border-color: ButtonText; box-shadow: none; text-shadow: none; }
+}
+
+/* Keep the patina in the face. The border stays still while it presses. */
+.enter > span {
+  background-image: linear-gradient(157deg,#d2b58065,#b4976280 60%,#c7ab7570),url("assets/brass-patina.webp");
+  background-color: #c4a66e;
+  background-size: 100% 100%, 80px 72px;
+  background-blend-mode: normal, soft-light;
+}
+@media (forced-colors: active) {
+  .enter > span { background: ButtonFace; }
+}
