@@ -12,7 +12,7 @@ function choose(view){
 if(tour&&choices.length&&panels.length){tour.classList.add('enhanced');choose('records');choices.forEach((button,index)=>{button.addEventListener('click',()=>choose(button.dataset.view));button.addEventListener('keydown',event=>{if(!['ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?0:event.key==='End'?choices.length-1:(index+(event.key==='ArrowRight'?1:-1)+choices.length)%choices.length;choices[next].focus();choose(choices[next].dataset.view);});});}
 
 
-const radioPanel = document.querySelector('#radio-view');
+for (const radioPanel of document.querySelectorAll('[data-panel]')) {
 const radioReel = radioPanel?.querySelector('video[data-reel]');
 const radioToggle = radioPanel?.querySelector('.radio-reel-toggle');
 
@@ -62,4 +62,6 @@ if (radioReel && radioToggle) {
   document.addEventListener('visibilitychange', syncRadio);
   radioToggle.hidden = false;
   syncRadio();
+}
+
 }
