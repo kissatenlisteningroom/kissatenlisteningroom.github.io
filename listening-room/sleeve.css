@@ -30,11 +30,12 @@ nav{display:flex;align-items:center;gap:clamp(18px,3vw,44px)}
 .mast nav a,footer nav a{display:inline-block;font-size:1rem;text-decoration:none;padding:11px 0}
 nav a:hover,.quiet:hover{text-decoration:underline}
 .spread{min-height:66vh;display:grid;grid-template-columns:0.84fr 1.16fr;align-items:center;gap:clamp(12px,2vw,30px);padding:2vh var(--gutter) clamp(38px,7vh,88px)}
-.intro{padding:0 0 0 clamp(0px,2.5vw,46px)}
-h1{color:var(--gold);font-size:clamp(4.2rem,9.8vw,10rem);line-height:.84}
-h1 em{margin-left:.23em}
-.intro p{font:clamp(1.05rem,1.45vw,1.45rem)/1.55 Rockwell,Arvo,serif;margin-top:clamp(22px,4vh,42px)}
-.intro .intro-description{max-width:38ch;margin-top:14px;color:#d9d4bf;font-size:clamp(.98rem,1.26vw,1.18rem);line-height:1.45}
+.intro{padding:0 0 0 clamp(0px,2.5vw,46px);container-type:inline-size}
+.intro h1{color:var(--gold);font-size:min(19cqw,9rem);line-height:1}
+.intro .welcome{display:block;font-size:.69em;margin-bottom:.15em}
+.intro .greeting{display:inline-block;white-space:nowrap}
+.intro p{font:clamp(1rem,1.32vw,1.3rem)/1.48 Rockwell,Arvo,serif;margin-top:clamp(20px,3.4vh,34px)}
+.intro .intro-description{max-width:40ch;margin-top:12px;color:#d9d4bf;text-wrap:pretty}
 .quiet{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:1rem;margin-top:15px}
 .plinth{position:relative;isolation:isolate;width:100%;max-width:820px;aspect-ratio:1.14;overflow:visible;pointer-events:none;container-type:inline-size}
 .prop{--sleeved-diameter:.92;--sleeved-y:-.035;position:absolute;width:84%;aspect-ratio:1;top:50%;left:55%;transform:translate(-50%,-50%)}
@@ -118,9 +119,8 @@ footer nav{grid-column:1/-1;margin-top:14px;border-top:1px solid #817f67}
  .mast{padding:9px var(--gutter)}.mast nav{gap:16px}.mast nav a{font-size:.92rem}
  .spread{grid-template-columns:1fr;gap:8px;padding:0 var(--gutter) 30px;min-height:0}
  .plinth{grid-row:1;max-width:min(100%,48svh);justify-self:center;aspect-ratio:1.03}
- .intro{padding:0}h1{font-size:clamp(3.6rem,11vw,5.4rem);line-height:.96}h1 br{display:none}h1 em{margin-left:.12em}
- .intro p{margin-top:12px;font-size:clamp(1rem,4.25vw,1.2rem);line-height:1.43}.intro p br{display:none}.quiet{margin-top:4px}
- .intro .intro-description{margin-top:12px}
+ .intro{padding:0}.intro h1{font-size:min(15.6cqw,5.4rem)}
+ .intro p{margin-top:12px;font-size:clamp(1rem,4.12vw,1.16rem)}.intro p br{display:none}.quiet{margin-top:4px}
  .booth-head{display:block}.booth-head p{margin-top:9px}.booth{padding-inline:16px}
  .desk{padding:10px}.programme{grid-template-columns:1fr;gap:19px;padding:13px}
  .channels{gap:18px;padding:0 3px 8px}.channels a{font-size:1.02rem}
