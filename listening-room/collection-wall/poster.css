@@ -1,0 +1,136 @@
+/* An opal-glass lightbox on the charcoal wall beside the walnut bays. */
+.poster-edition {
+  --cabinet: 53%;
+  --post: 10px;
+  --bay-width: 26.6vh;
+  --title-position: 16%;
+  grid-template-rows: var(--bays, repeat(3, minmax(0, 1fr)));
+  align-content: stretch;
+}
+.shop-print {
+  position:absolute; inset:0 0 0 auto; width:calc(100% - var(--cabinet));
+  container-type:inline-size;
+  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+  isolation:isolate;
+  padding-block:2vh 10vh;
+  color:#efdbb5;
+  background:linear-gradient(130deg,#080a0945,transparent 58%,#08090877),
+    #1e1911 url('assets/charcoal-plaster.webp') center / 470px auto;
+  box-shadow:inset 3px 0 6px #080704d9;
+}
+.shop-print::after {
+  content:''; position:absolute; pointer-events:none; inset:auto 0 10% 0;
+  height:2px; background:#0b0a08; box-shadow:0 1px #826a452e;
+}
+.opal-sign {
+  position:relative; isolation:isolate; width:76%; max-width:650px; margin-left:5%;
+  aspect-ratio:770 / 429; flex:none;
+}
+.opal-sign h2 {
+  position:absolute; inset:24% 19% 16% 5%; margin:0;
+  display:grid; align-content:center; padding-left:5%;
+  color:#25351c; background:#f4d49c; mask:none;
+  font:400 clamp(2.2rem,9.5cqw,7rem)/.86 Georgia,serif; letter-spacing:-.045em;
+}
+.opal-sign h2 em {display:block; font-weight:400}
+.opal-sign .fixture {
+  position:absolute; inset:0; width:100%; height:100%; display:block;
+  mask-image:linear-gradient(90deg,transparent,#000 4.5%,#000 84%,transparent),
+    linear-gradient(transparent,#000 20%,#000 85%,transparent);
+  mask-composite:intersect;
+}
+.shop-print p {
+  position:relative; margin:0 7% 0 9%; max-width:29ch;
+  font:400 clamp(1.125rem,4.1cqw,2.35rem)/1.18 Georgia,serif;
+  letter-spacing:-.027em; text-wrap:pretty;
+}
+@media (prefers-reduced-motion:no-preference) {
+  .shop-print[data-light="off"] .fixture {filter:brightness(.53)}
+  .shop-print[data-light="off"] .opal-sign h2 {background:#7d663d}
+  .shop-print[data-light="starting"] .fixture {animation:lightbox-strike 580ms ease-out both}
+  @keyframes lightbox-strike {
+    0% {filter:brightness(.53)}
+    29% {filter:brightness(.95)}
+    46% {filter:brightness(.69)}
+    72% {filter:brightness(1.035)}
+    100% {filter:brightness(1)}
+  }
+}
+.poster-edition .record-row .lp-harbour {visibility:hidden}
+.thumbed-spine {
+  position:absolute; pointer-events:none; visibility:hidden;
+  background-image:var(--bay); transform-origin:50% 100%;
+  transform:skewX(calc(-2.9deg * var(--peek,0))) scaleX(calc(1 + .54 * var(--peek,0)));
+  box-shadow:calc(-2px * var(--peek,0)) 0 calc(2px * var(--peek,0)) #100b09b8;
+}
+.thumbed-spine::after {
+  content:''; position:absolute; inset:0 auto 0 100%; width:28%;
+  background:linear-gradient(90deg,#a18760,#3c2921);
+  opacity:var(--peek,0);
+}
+.poster-edition .record-row {
+  z-index:1; width: var(--cabinet);
+  background: #513723 url('../assets/wood.webp') 37% center / auto 160%;
+}
+.poster-edition .record-row::before {
+  content: ''; position:absolute; inset:0 auto 0 0; width:var(--post);
+  box-shadow: inset 1px 0 #ba8b54, inset -2px 0 3px #26180f, -4px 0 12px #160d09aa;
+  z-index:1;
+}
+.poster-edition .row-photo {
+  left:var(--post); --register:0%;
+}
+.poster-edition .row-photo, .poster-edition .row-photo::after {
+  background-size:calc(var(--bay-width) * 2) 100%;
+}
+@media (max-width: 900px) and (orientation: portrait) {
+  .poster-edition {
+    --panel-height: var(--print-height, 42%);
+    --cabinet: 100%;
+    --bay-width: 32vw;
+    --title-position: 13%;
+    --crown:clamp(8px,2.8vw,13px);
+    background:#382215;
+    grid-template-rows:var(--panel-height) var(--crown) var(--bays, repeat(3, minmax(0, 1fr)));
+  }
+  .poster-edition::before {
+    content:"";grid-row:2;z-index:2;
+    background:linear-gradient(#7c4c29a6,transparent 25%,#160c08bd),#54341f url('../assets/wood.webp') center 42% / 100% auto;
+    box-shadow:inset 0 1px #c2936070,0 3px 5px #100907a6;
+  }
+  .poster-edition .upper-row {grid-row:3}
+  .poster-edition .middle-row {grid-row:4}
+  .poster-edition .lower-row {grid-row:5}
+  .shop-print {
+    width:100%; height:var(--panel-height); justify-content:center;
+    padding:calc(var(--mast-reserve,62px) - 29px) 0 27px;
+  }
+  .shop-print::after {display:none}
+  .opal-sign { width:min(80%,44svh,calc((var(--panel-height) - 112px) * 1.795)); max-width:440px; margin-left:4%; }
+  .opal-sign h2 {font-size:clamp(2.4rem,min(12.5cqw,7.7vh),5.45rem)}
+  .shop-print p {max-width:30ch; margin:0 8%; font-size:clamp(1.125rem,4.8cqw,1.55rem)}
+}
+@media (max-width:900px) and (orientation:portrait) and (max-height:650px) {
+  .shop-print {padding-top:35px; padding-bottom:13px}
+  .shop-print p {font-size:1rem; margin-top:0}
+}
+@media (min-aspect-ratio: 2/1) {
+  .shop-print {padding-block:55px 10px}
+  .opal-sign h2 {font-size:min(15cqw,17vh)}
+  .shop-print p {margin-top:0}
+}
+@media (forced-colors:active) {
+  .fixture {display:none !important}
+  .opal-sign h2 {border-image:none; border:2px solid CanvasText; color:CanvasText}
+}
+.packed-records { position:absolute; pointer-events:none; background-image:var(--bay); transform-origin:50% 100%; visibility:hidden; }
+html[data-mast-stock="paper"] .mast {
+  background:transparent; color:#263b41; text-shadow:none;
+}
+html[data-mast-stock="paper"] .signature img {
+  filter:brightness(0) saturate(100%) invert(17%) sepia(14%) saturate(1167%) hue-rotate(152deg) brightness(95%);
+}
+html[data-mast-stock="paper"] .mast a:focus-visible {outline-color:currentColor}
+
+html[data-mast-stock="charcoal"] .mast { background:transparent; color:#f7e6c8; text-shadow:0 1px 3px #10120e; }
+html[data-mast-stock="charcoal"] {background-color:#281b13}

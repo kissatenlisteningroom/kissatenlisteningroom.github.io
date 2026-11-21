@@ -1,0 +1,13 @@
+.motion .side { height: 650svh; }
+.motion .air-mark { top: calc(500svh - 100dvh); }
+.motion .collection-scene {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  min-height: 0;
+  z-index: 6;
+  pointer-events: none;
+  visibility: hidden;
+}
+.motion .poster-edition, .motion .collection-scene:not(.poster-edition) .record-row { will-change: transform; }
+.shelf-filters { position: absolute; width: 0; height: 0; pointer-events: none; }

@@ -1,0 +1,112 @@
+/* The ledge coordinates come from each photographed row. A foreground strip
+   of the photograph covers the bottom millimetres of every face-out sleeve. */
+.collection-scene {
+  --title-position: 7%;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  height: 100svh;
+  min-height: 430px;
+  display: grid;
+  align-content: center;
+  grid-template-rows: repeat(3, max(33.34%, 243px));
+  color: #f2deb5;
+}
+.record-row {
+  position: relative;
+  container-type: size;
+  background: #27190f;
+  box-shadow: -7px 6px 15px #100a05a6;
+}
+.row-photo, .row-photo::after {
+  position: absolute;
+  inset: 0;
+  background: var(--bay) var(--register, 50%) center / auto 100% repeat-x;
+}
+.row-photo { overflow: hidden; }
+.row-photo::after {
+  content: '';
+  clip-path: inset(var(--ledge) 0 0);
+  pointer-events: none;
+}
+.upper-row {
+  --bay: url('assets/upper-bays.webp');
+  --register: 17%;
+  --ledge: 95%;
+  --sleeve: 79%;
+}
+.middle-row {
+  --bay: url('assets/walnut-bays.webp');
+  --register: 52%;
+  --ledge: 88%;
+  --sleeve: 80%;
+}
+.lower-row {
+  --bay: url('assets/lower-bays.webp');
+  --register: 83%;
+  --ledge: 94%;
+  --sleeve: 80%;
+}
+.lp {
+  position: absolute;
+  left: var(--place);
+  top: calc(var(--ledge) - var(--sleeve) + 1px);
+  height: var(--sleeve);
+  aspect-ratio: 1;
+  transform-origin: 50% 100%;
+  transform: skewX(var(--lean, -.35deg)) rotate(var(--shuffle, 0deg));
+  background: #3a3329 var(--print) center / cover;
+  border-radius: 1px 2px 0 1px;
+  box-shadow: inset 1px 0 2px #f3d4a02e, inset -1px 0 2px #23150980, 2px 0 1px #755c42, 4px 1px 5px #150b04bd;
+}
+.lp::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 -4px 5px -3px #190e04b0;
+  background: linear-gradient(110deg, #ffd9a20b, transparent 40%, #2b160813);
+}
+
+.lp-harbour {
+  --place: var(--title-position);
+  --lean: .25deg;
+  --print: url('assets/night-harbour.webp');
+  color: #f4e4c1;
+  container-type: inline-size;
+}
+.lp-harbour h2, .lp-bridge p {
+  position: absolute;
+  left: 5%;
+  right: 3%;
+  margin: 0;
+  z-index: 1;
+}
+.lp-harbour h2 {
+  top: 6%;
+  color: inherit;
+  font: 400 23.7cqw/.84 Georgia, serif;
+  letter-spacing: -.055em;
+  mask-size: 145px 115px;
+}
+.lp-harbour h2 em { display: block; font-weight: 400; }
+.lp-bridge p {
+  top: 7%;
+  left: 7%;
+  right: 8%;
+  color: #282b25;
+  font: 400 8.15cqw/1.05 Georgia, serif;
+  letter-spacing: -.025em;
+  text-wrap: pretty;
+}
+@media (max-aspect-ratio: 1/1) {
+  .collection-scene { --title-position: 5.5%; }
+  .lp-leaves { --place: 85%; }
+  .lp-landscape { --place: 54%; }
+  .lp-sunset { --place: -46%; }
+  .lp-coast { --place: max(66%, calc(var(--title-position) + 86cqh)); }
+  .lp-rings { --place: calc(max(66%, var(--title-position) + 86cqh) + 78cqh); }
+}
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 3/2) {
+  .lp-rings { --place: calc(62% + 77cqh); }
+}

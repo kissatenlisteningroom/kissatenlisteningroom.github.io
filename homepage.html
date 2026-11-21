@@ -1,51 +1,89 @@
 <!doctype html>
-<html lang="en" data-type="software">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="referrer" content="no-referrer">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="only light"><meta name="theme-color" content="#263024">
+<meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'none'; img-src 'self' data:; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
-<title>Kissaten — A listening room for iPhone</title>
-<meta name="page-type" content="software">
-<meta name="site-kind" content="software">
-<meta name="description" content="A personal listening room for your iPhone. Your recordings, offline listening and independent radio. Open the Kissaten iPhone setup guide.">
-<link rel="preload" as="image" href="assets/home/records.jpg">
-<link rel="stylesheet" href="homepage.css?v=20261117-room-overview">
-<link rel="stylesheet" href="assets/website-ink.css?v=20261115-iphone-pass">
-<link rel="stylesheet" href="assets/website-finish.css?v=20261115-iphone-pass">
-<script src="install-config.js" defer></script>
-<script src="install.js?v=20261116-room-first" defer></script>
-<script src="homepage.js?v=20261117-room-overview" defer></script>
-</head>
-<body>
-<header class="masthead nav"><div class="wrap"><a class="skip" href="#main">Skip to content</a><a class="signature" href="enter.html" aria-label="Kissaten entrance"><span class="signature-name">Kissaten</span><span class="brand-descriptor" aria-hidden="true">Listening Room</span></a><nav aria-label="Main navigation"><a href="#walkthrough">App previews</a><a id="setup-nav" data-setup-entry href="index.html"><span data-setup-label>Preview iPhone setup</span> <span aria-hidden="true">→</span></a></nav></div></header>
+<meta name="description" content="A listening room for iPhone. Play imported recordings offline and discover independent radio.">
+<title>Kissaten · The listening room</title>
+<link rel="icon" href="assets/signature-mask.png">
+<link rel="stylesheet" href="listening-room/sleeve.css?v=rockwell-foil"><link rel="stylesheet" href="listening-room/broadcast-study.css?v=booth-liner"><link rel="stylesheet" href="listening-room/collection-wall/wall.css?v=harbour-type"><link rel="stylesheet" href="listening-room/collection.css?v=booth-liner"><link rel="stylesheet" href="listening-room/film-jacket.css?v=booth-liner"><link rel="stylesheet" href="listening-room/collection-wall/poster.css?v=booth-liner"><script src="listening-room/broadcast-study.js?v=gold-foil" type="module"></script><script src="listening-room/booth.js?v=browsing-sleeves" defer></script>
+</head><body>
+<a class="skip" href="#booth">Skip to the listening booth</a>
+<header class="mast"><a class="signature" href="#entrance" aria-label="Kissaten entrance"><img src="assets/signature-mask.png" width="400" height="144" alt="Kissaten"></a>
+<nav aria-label="Explore Kissaten"><a href="#collection">Records</a><a href="#radio">Radio</a><a href="#guide">Setup <span aria-hidden="true">↗</span></a></nav></header>
 <main id="main">
-<section class="hero" aria-labelledby="hero-title"><div class="wrap">
-<figure class="hero-room"><img src="assets/home/lounge.jpg" alt="An empty Kissaten listening room, with low lamps, record-lined walls and a turntable between walnut speakers." width="941" height="1672" fetchpriority="high"></figure>
-<div class="hero-copy hero-text">
-  <h1 id="hero-title">A listening room for iPhone.</h1>
-  <p>Play your own recordings offline and discover independent radio.</p>
-  <a class="primary" href="#walkthrough"><span class="primary-face">Explore the app <span aria-hidden="true">→</span></span></a>
-  <p class="note" data-beta-closed>Kissaten isn’t available to download yet.</p>
-</div>
-</div></section>
-<section class="walkthrough chapter" id="walkthrough" aria-labelledby="walk-title" tabindex="-1"><div class="wrap">
-<div class="chapter-heading"><h2 id="walk-title"><span class="impressed-ink">App previews</span></h2><div class="walkthrough-setup"><a data-setup-entry href="index.html"><span data-setup-label>Preview iPhone setup</span> <span aria-hidden="true">→</span></a></div></div>
-<div class="walk-controls" role="group" aria-label="Choose an app preview"><button type="button" data-view="records" aria-pressed="true" aria-controls="records-view"><svg class="view-selected" aria-hidden="true" viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg><span>Records</span></button><button type="button" data-view="radio" aria-pressed="false" aria-controls="radio-view"><svg class="view-selected" aria-hidden="true" viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg><span>Radio</span></button><button type="button" data-view="room" aria-pressed="false" aria-controls="room-view"><svg class="view-selected" aria-hidden="true" viewBox="0 0 20 20"><path d="m4 10 4 4 8-8"/></svg><span>Room</span></button></div>
-<div class="views">
-<article class="app-view" id="records-view" data-panel="records"><div class="view-copy"><h3>Records on your iPhone</h3><p>Add recordings from Files, make a playlist and take it offline. Your recordings stay on your iPhone.</p></div><figure data-ui><img src="assets/home/records.jpg" loading="eager" alt="Illustrative Kissaten Records view with album sleeves on walnut shelves and a compact player." width="444" height="812"></figure></article>
-<article class="app-view" id="radio-view" data-panel="radio"><div class="view-copy"><h3>Independent radio</h3><p>Tune in to a station on the other side of the world.</p><p class="quiet-copy">This montage shows Radio in the listening room. Stations play in the iPhone app.</p></div><figure class="radio-reel" aria-label="Kissaten Radio montage">
-  <div class="radio-reel-art">
-    <img src="assets/home/radio-reel.jpg?v=20261117-doorway" alt="The door opening into the lamp-lit Kissaten listening room." width="960" height="896" loading="lazy">
-    <video muted loop playsinline preload="none" data-reel="assets/home/radio-reel.mp4?v=20261117-doorway" aria-hidden="true"></video>
-  </div>
-  <button class="radio-reel-toggle" type="button" hidden>Play montage</button>
-</figure></article>
-<article class="app-view" id="room-view" data-panel="room"><div class="view-copy"><h3>The console</h3><p>Two brass plates beside the turntable. Records takes you to your collection. Radio takes you to live stations.</p></div><figure class="radio-reel" aria-label="Kissaten listening room montage"><div class="radio-reel-art"><img src="assets/home/room-reel.jpg?v=20261117-room-overview" alt="The doorway opening into Kissaten’s lamp-lit listening room." width="960" height="896" loading="lazy"><video muted loop playsinline preload="none" data-reel="assets/home/room-reel.mp4?v=20261117-room-overview" aria-hidden="true"></video></div><button class="radio-reel-toggle" type="button" hidden>Play montage</button></figure></article>
-</div>
+<section class="side" id="entrance" aria-labelledby="arrival">
+<span class="air-mark" aria-hidden="true"></span>
+<span class="collection-mark" aria-hidden="true"></span>
+<div class="hold">
 
+<div class="spread">
+<div class="intro"><h1 id="arrival">Come <br><em>on in.</em></h1>
+<p>A record you know by heart. <br>A station on the other side of the world.</p>
+<p class="intro-description">Kissaten is a listening room on your iPhone for the music you keep and the stations you tune into.</p></div>
+<div class="plinth" role="img" aria-label="A black record peeking out of a wrapped sleeve with the Kissaten listening room on its cover." aria-describedby="opening-sticker sticker-beta">
+<div class="prop" aria-hidden="true"><div class="vinyl-slot"><div class="record"><img class="pressing" src="listening-room/assets/grooved-pressing.webp" width="1254" height="1254" alt="">
+<img class="paper-label" src="listening-room/assets/printed-label.webp" width="800" height="800" alt=""><img class="pressing-ring" src="listening-room/assets/pressing-ring.png" width="800" height="800" alt=""></div></div>
+<div class="jacket"><div class="front"><img class="cover-photo" width="1024" height="1024" src="listening-room/assets/wrapped-room.webp" alt="" fetchpriority="high">
+<div class="sticker">
+  <img class="sticker-signature" src="assets/signature-mask.png" width="400" height="144" alt="">
+  <div class="sticker-copy" id="opening-sticker"><strong>A new way to discover and</strong>
+  <span>listen to music on your phone.</span></div>
+  <span class="sticker-imprint" id="sticker-beta">Private Beta</span>
+</div></div></div></div>
+</div></div>
+<figure class="radio-scene" id="on-air" aria-labelledby="air-title">
+  <svg class="studio-still" viewBox="0 0 1672 941" preserveAspectRatio="xMaxYMid slice" role="img" aria-label="A Kissaten tuning knob on the walnut console of a late-night radio studio.">
+    <image class="locked-plate" href="listening-room/assets/broadcast-room-wide.webp" width="1672" height="941"/>
+    <image href="listening-room/assets/tuner-imprint.png?v=pressed-paper" x="1189.6" y="411.6" width="76.8" height="76.8"/>
+  </svg>
+  <canvas class="cut" aria-hidden="true"></canvas><canvas class="ambience" aria-hidden="true"></canvas>
+  <figcaption class="air-copy"><h2 id="air-title">Independent radio.</h2><p>Spend a morning in Brussels, an evening in Tokyo. Tune in to live stations from your iPhone.</p>
+    <a class="quiet" href="#radio">Explore Radio <span aria-hidden="true">→</span></a>
+  </figcaption>
+</figure>
+<section class="collection-scene poster-edition" id="collection" tabindex="-1" aria-labelledby="collection-title">
+  <div class="shop-print">
+    <div class="opal-sign"><h2 id="collection-title">Your <em>collection.</em></h2><img class="fixture" src="listening-room/collection-wall/assets/mounted-lightbox.webp" alt="" width="770" height="429"></div>
+    <p>Bring your own music or Spotify playlist and listen offline, ad-free, all day.</p>
+  </div>
+  <div class="record-row upper-row" aria-hidden="true"><div class="row-photo"></div></div>
+  <div class="record-row middle-row" aria-hidden="true"><div class="row-photo">
+    <div class="lp lp-harbour"></div>
+  </div></div>
+  <div class="record-row lower-row" aria-hidden="true"><div class="row-photo"></div></div>
+</section>
 </div></section>
-<section class="beta chapter" id="beta" aria-labelledby="beta-title"><div class="wrap"><div class="beta-invitation"><h2 id="beta-title"><span class="impressed-ink">iPhone setup</span></h2><a class="primary" data-setup-entry href="index.html" aria-describedby="beta-setup-status"><span class="primary-face"><span data-setup-label>Preview iPhone setup</span> <span aria-hidden="true">→</span></span></a><p class="note" id="beta-setup-status">See what iPhone setup involves.</p><figure class="record-plaque" aria-hidden="true">
-  <img src="assets/home/record-plaque.jpg" alt="" width="1600" height="900" loading="lazy">
-</figure></div><div class="beta-practical"><h3>What you’ll need</h3><p>First-time AltStore setup needs an iPhone, a Mac or Windows computer, a data cable and your Apple Account.</p><details><summary>What about weekly renewal?</summary><p>Apps signed with a free Apple Account usually need refreshing about every seven days. Keep AltServer available for the normal computer-assisted route. Automatic and remote renewal aren’t qualified for this beta yet.</p></details><details><summary>What if I need a hand?</summary><p>Use the help beside each setup step, or <a href="mailto:kissaten@protonmail.com?subject=Kissaten%20beta%20help">email David</a>. Keep an existing installation while troubleshooting; deleting the app can remove recordings.</p></details></div></div></section>
-</main>
-<footer class="closing"><div class="wrap"><a class="signature" href="#main" aria-label="Kissaten — back to top"><span class="signature-name">Kissaten</span><span class="brand-descriptor" aria-hidden="true">Listening room</span></a><nav aria-label="Support and beta information"><a href="beta-review.html#privacy">Privacy overview (draft)</a><a href="beta-review.html#participation">Beta preview notes</a><a href="mailto:kissaten@protonmail.com">Contact</a></nav></div></footer>
-</body></html>
+
+<div class="film-bed" id="booth" tabindex="-1"><span id="walkthrough" aria-hidden="true"></span><section class="booth" aria-labelledby="booth-title">
+<header class="booth-head">
+  <h2 id="booth-title">From the <em>booth.</em></h2>
+  <ul class="listening-notes">
+    <li><strong>Bring your music.</strong> Import audio files or a Spotify track list.</li>
+    <li><strong>Take it offline.</strong> Play the music saved to your iPhone, ad-free.</li>
+    <li><strong>Tune in live.</strong> Find independent stations by country and save your favourites.</li>
+  </ul>
+</header>
+<div class="desk">
+<nav class="channels" aria-label="Choose a film"><a href="#room"><span aria-hidden="true">01</span> Room</a><a href="#records"><span aria-hidden="true">02</span> Records</a><a href="#radio"><span aria-hidden="true">03</span> Radio</a></nav>
+<div class="programmes">
+<article class="programme" id="room" aria-labelledby="room-title">
+<div class="screen"><video controls playsinline muted preload="none" poster="listening-room/films/room-reel.jpg" aria-label="Room, a silent film"><source src="listening-room/films/room-reel.mp4" type="video/mp4"></video></div>
+<div class="notes"><h3 id="room-title">The listening room.</h3><p>A first look inside Kissaten.</p><details><summary>About the film</summary><p>The door opens onto the record shelves. A handwritten lightbox hangs above the console.</p></details></div></article>
+<article class="programme" id="records" aria-labelledby="records-title">
+<div class="screen"><video controls playsinline muted preload="none" poster="listening-room/films/records-reel.jpg" aria-label="Records, a silent film"><source src="listening-room/films/records-reel.mp4" type="video/mp4"></video></div>
+<div class="notes"><h3 id="records-title">Side A, again.</h3><p>Bring a recording from Files into your collection. Make a playlist and take it offline.</p><details><summary>About the film</summary><p>Two listeners open a blue record sleeve and follow a track in the liner notes.</p></details></div></article>
+<article class="programme" id="radio" aria-labelledby="radio-title">
+<div class="radio-pane"><div class="screen" id="radio-film"><video controls playsinline muted preload="none" poster="listening-room/films/radio-reel.jpg" aria-label="Radio, a silent film"><source src="listening-room/films/radio-reel.mp4" type="video/mp4"></video></div>
+<figure class="screen lookup" id="lookup" hidden><img class="station-globe" src="listening-room/assets/globe.webp" width="490" height="392" alt="Kissaten’s gold station globe on green leather."><figcaption id="station-caption" aria-live="polite">Station globe</figcaption></figure></div>
+<div class="notes"><h3 id="radio-title">Someone else’s midnight.</h3><p>Independent radio brings the sound of another city into the room. Follow the globe from Brussels to Tokyo and Melbourne.</p>
+<div class="station-tools" hidden><button type="button" id="find-station" aria-expanded="false" aria-controls="lookup station-keys">Explore the stations</button>
+<div id="station-keys" role="group" aria-label="Choose a station" hidden><button data-station="brussels" aria-pressed="false">Brussels</button><button data-station="tokyo" aria-pressed="false">Tokyo</button><button data-station="melbourne" aria-pressed="false">Melbourne</button></div></div>
+<details><summary>About the film</summary><p>Two listeners sit above the harbour. Reflections on the windscreen lead down to the car radio.</p></details></div></article>
+</div></div></section></div>
+<footer id="guide" aria-labelledby="guide-title"><span class="sr-only" id="beta" aria-hidden="true"></span><div class="end-notes"><h2 id="guide-title">Enter the <em>room.</em></h2><p>Kissaten for iPhone is in private beta. If you have an invitation, open your personal link in Safari on your iPhone.</p>
+<a class="brass" href="beta-review.html">Explore the private beta <span aria-hidden="true">→</span></a></div>
+<figure class="entry-jacket"><video controls playsinline muted loop preload="none" poster="listening-room/films/room-reel.jpg" aria-label="Enter the listening room, a silent film"><source src="listening-room/films/room-reel.mp4" type="video/mp4"></video></figure>
+<nav aria-label="Beta information"><a href="beta-review.html#privacy">Privacy</a><a href="index.html">Preview iPhone setup</a></nav></footer>
+</main></body></html>
